@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+html, body{
+    font-size: 18px;
+    overflow-x: hidden;
+    color: #fff;
+    background-color: #e2e2e2;
+    font-family: 'Lato', sans-serif;
+}
+
+main{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.63)), url("../../images/img/school1.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.container{
+    width: 1140px;
+    text-align: center;
+    margin: auto;
+}
+
+.index-header {
+    margin-top: 2rem;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.index-header img{
+    width: 75px;
+    height: auto;
+    margin: 0 1rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.index-header h1{
+    display: inline-block;
+    font-size: 250%;
+    font-weight: 300;
+    vertical-align: middle;
+    letter-spacing: 1px;
+}
+
+nav{
+    float: right;
+    width: 6rem; 
+    margin: 3.2rem 1rem;
+    text-align: left;
+}
+
+.nav-icon{
+    cursor: pointer;
+}
+
+.nav-icon img{
+    width: 2.5rem;
+    height: 1rem;
+}
+
+
+.main-nav{
+    font-size: 20px;
+    list-style: none;
+    display : none;
+}
+
+.main-nav li{
+    display: block;
+    padding: 6px 0;
+}
+
+.main-nav li i{
+    font-size: 16px;
+    padding-right: 8px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited{
+    text-decoration: none;
+    color: #efefef;
+    padding-bottom: 3.5px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active{
+    color: #a6afaf;
+    border-bottom: 2px solid #7f8c8d;
+}
+
+.button{
+    padding: 20px;
+}
+
+.button a:link,
+.button a:visited{
+    font-size: 200%;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 4px;
+    border-bottom: 1.5px solid transparent;
+    transition: color 0.2s, font-style 0.2s;
+}
+
+.button a:hover,
+.button a:active{
+    color: rgb(196, 182, 137);
+    font-style: italic;
+}
+
+.first{
+    position: absolute;
+    top: 47%;
+    left: 20%;
+}
+
+.second{
+    position: absolute;
+    top: 47%;
+    right: 16%;
+}
+
+.verification{
+    position: absolute;
+    left: 37%;
+    bottom: 10%;
+}
+
+.verification a:link,
+.verification a:visited{
+    color: rgba(209, 202, 202, 0.65);
+}
+
+.verification a:hover,
+.verification a:active{
+    color: rgb(196, 182, 137);
+}
+
+.searchStudent{
+    position: absolute;
+    right: 5%;
+    bottom: 20%;
+}
+
+/* Flash Message */
+.flash-message {
+    border: 1px solid black;
+    text-align: center;
+    padding: 0.8rem 0;
+    margin: 1rem auto;
+    width: 65%;
+    border-radius: 5px;
+}
+
+.flash-message--error {
+    color: rgb(29, 27, 27);
+    border: 1px solid #e21919;
+    background-color: #df7171bd;
+}
+
+/* invalid message */
+#invalid {
+    border-bottom: 2px solid #e21919;
+}
+
+.invalid {
+    border: 1px solid #e21919;
+}

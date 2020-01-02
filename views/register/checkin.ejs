@@ -1,0 +1,54 @@
+<%- include("../partials/header") %>
+<link rel="stylesheet" href="/style/checkin.css">
+
+</head>
+
+<body>
+    <main>
+        <div class="heading">
+            <h1>Technological University Mawlmyine</h1>
+        </div>
+        <%if(errorMessage) { %>
+            <div>
+                <p class="flash-message flash-message--error"><%=errorMessage%></p>
+            </div>
+        <% } %>
+        <form action="/student-registration/second-to-final" method="POST" class="checkin-form">
+            <h2>Check-in Form</h2>
+            <hr>
+            <div class="form-group">
+                <label for="g10Rollno">ဆယ်တန်းခုံနံပါတ်</label>
+                <input 
+                id="<%=validationError.find(err => err.param === 'g10Rollno') ? 'invalid' : '' %>"
+                type="text" 
+                name="g10Rollno" 
+                id="g10Rollno"
+                value="<%=g10Rollno%>">
+            </div>
+            <div class="form-group">
+                <label for="g10Year">ကျောင်းသို့စတင်ဝင်ရောက်သည့်နှစ်</label>
+                <input 
+                id="<%=validationError.find(err => err.param === 'g10Year') ? 'invalid' : '' %>"
+                type="text" 
+                name="g10Year" 
+                id="g10Year"
+                value="<%=g10Year%>">
+            </div>
+            <div class="form-group">
+                <label for="major">သင်တန်းအမည်</label>
+                <select name="major" id="major" class="<%=validationError.find(err => err.param === 'g10Year') ? 'invalid' : '' %>">
+                    <option value=''>Select One Major</option>
+                    <option value="civil">Civil Engineering</option>
+                    <option value="ec">Electronic and Communication Engineering</option>
+                    <option value="ep">Eelctrical Power Engineering</option>
+                    <option value="mech">Mechnical Engineering</option>
+                    <option value="it">Information Technology Engineering</option>
+                </select>
+            </div>
+            <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+            <div class="form-group button">
+                <button class="btn">ရှေ့သို့</button>
+            </div>
+        </form>
+    </main>
+    <%- include("../partials/footer") %>

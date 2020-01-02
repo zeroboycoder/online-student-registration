@@ -1,0 +1,90 @@
+<%- include("../partials/header") %>
+<link rel="stylesheet" href="/style/voucher.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="voucher">
+            <div class="voucher-header">
+                <div class="voucher-img">
+                    <img src="./images/img/logo.png" alt="Logo">
+                </div>
+                <div>
+                    <h3>Technological University Mawlamyine</h3>
+                </div>
+                <div class="voucher-logo">
+                    <img src="./images/img/voucher.png">
+                </div>
+            </div>
+            <div class="voucher-body">
+                <div class="voucher-label">
+                    <table class="label-table">
+                        <tr>
+                            <td>Name</td>
+                            <td class="value"><%=name%></td>
+                        </tr>
+                        <tr>
+                            <td>Major</td>
+                            <td class="value"><%=major%></td>
+                        </tr>
+                        <tr>
+                            <td>Year </td>
+                            <td class="value"><%=year%></td>
+                        </tr>
+                        <tr>
+                            <td>Roll No</td>
+                            <td class="value"><%=rollno%></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="voucher-fee">
+                    <table class="fee-table">
+                        <tr>
+                            <th>No</th>
+                            <th>Contant</th>
+                            <th>Cost</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>School Fee</td>
+                            <td>30,000 MMK</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>NRC Fee</td>
+                            <td>200 MMK</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Exam Fee</td>
+                            <td>2,500 MMK</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Lab Fee</td>
+                            <td>500 MMK</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Library Fee</td>
+                            <td>300 MMK</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Sport Fee</td>
+                            <td>1,000 MMK</td>
+                        </tr>
+                    </table>
+                    <hr>
+                    <table class="fee-table fee-table-bottom">
+                        <tr>
+                            <td></td>
+                            <td>Total Fee</td>
+                            <td>34,500 MMK</td>
+                        </tr>   
+                    </table>
+                </div>
+            </div>
+        </div>        
+    </div>
+<%- include("../partials/footer") %>

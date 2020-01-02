@@ -1,0 +1,349 @@
+<%- include("../partials/header") %>
+<link rel="stylesheet" href="/style/studentRegistration.css">
+</head>
+<body>
+<main>
+    <div class="container_fluid">
+        <% if(errorMessage) { %>
+            <div>
+                <p class="flash-message flash-message--error"><%= errorMessage %></p>
+            </div>
+        <% } %>
+        <div class="header">
+            <h1>Student Registration <% if(firstYear) { %>
+                ( First Year )
+                <% } %></h1>
+        </div>
+        <form action="/student-registration" method="POST" enctype="multipart/form-data">
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="image">Image (only .png or .jpg/.jpeg)</label></div>
+                <div class="col span-2-of-3">
+                    <input
+                    class="<%=validationError.find(err => err.param === 'image') ? 'invalid' : '' %>"
+                    type="file"
+                    name="image" 
+                    id="image">
+                </div>
+            </div>
+            <hr class="break_line">
+
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="studentNameMyan">ကျောင်းသား/သူ အမည်(မြန်မာ)</label></div>
+                <div class="col span-2-of-3">
+                    <input
+                    id="<%=validationError.find(err => err.param === 'studentNameMyan') ? 'invalid' : '' %>"
+                    type="text"
+                    name="studentNameMyan"
+                    id="studentNameMyan"
+                    value="<%=studentNameMyan%>">
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="studentNameEng">ကျောင်းသား/သူ အမည်(အင်္ဂလိပ်)</label></div>
+                <div class="col span-2-of-3">
+                    <input
+                    id="<%=validationError.find(err => err.param === 'studentNameEng') ? 'invalid' : '' %>"
+                    type="text" 
+                    name="studentNameEng" 
+                    id="studentNameEng" 
+                    value="<%=studentNameEng%>">
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="studentNRC">နိုင်ငံသားစီစစ်ရေးကတ်ပြားအမှတ်</label></div>
+                <div class="col span-2-of-3">
+                    <input 
+                    id="<%=validationError.find(err => err.param === 'studentNRC') ? 'invalid' : '' %>"
+                    type="text" 
+                    name="studentNRC" 
+                    id="studentNRC" 
+                    value="<%=studentNRC%>">
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="birthDate">မွေးသက္ကရာဇ်</label></div>
+                <div class="col span-2-of-3">
+                    <input type="date" 
+                    class="<%=validationError.find(err => err.param === 'birthDate') ? 'invalid' : '' %>"
+                    name="birthDate" 
+                    id="birthDate" 
+                    value="<%=birthDate%>">
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="bloodType">သွေးအုပ်စု</label></div>
+                <div class="col span-2-of-3">
+                    <input
+                    id="<%=validationError.find(err => err.param === 'bloodType') ? 'invalid' : '' %>"
+                    type="text" 
+                    name="bloodType" 
+                    id="bloodType" 
+                    value="<%=bloodType%>">
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="height">အရပ်</label></div>
+                <div class="col span-2-of-3">
+                    <input 
+                    id="<%=validationError.find(err => err.param === 'height') ? 'invalid' : '' %>"
+                    type="text" 
+                    name="height" 
+                    id="height" 
+                    value="<%=height%>">
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="obviousSign">ကိုယ်တွင်ထင်ရှားသောအမှတ်အသား</label></div>
+                <div class="col span-2-of-3">
+                    <input
+                    id="<%=validationError.find(err => err.param === 'obviousSign') ? 'invalid' : '' %>"
+                    type="text" 
+                    name="obviousSign" 
+                    id="obviousSign" 
+                    value="<%=obviousSign%>">
+                </div>
+            </div>
+            <hr class="break_line">
+            
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="fatherNameMyan">အဘအမည်(မြန်မာ)</label></div>
+                <div class="col span-2-of-3">
+                    <input 
+                    id="<%=validationError.find(err => err.param === 'fatherNameMyan') ? 'invalid' : '' %>"
+                    type="text" 
+                    name="fatherNameMyan" 
+                    id="fatherNameMyan" 
+                    value="<%=fatherNameMyan%>">
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="fatherNameEng">အဘအမည်(အင်္ဂလိပ်)</label></div>
+                <div class="col span-2-of-3">
+                    <input
+                    id="<%=validationError.find(err => err.param === 'fatherNameMyan') ? 'invalid' : '' %>"
+                    type="text" 
+                    name="fatherNameEng" 
+                    id="fatherNameEng" 
+                    value="<%=fatherNameEng%>">
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="fatherNRC">နိုင်ငံသားစီစစ်ရေးကတ်ပြားအမှတ်</label></div>
+                <div class="col span-2-of-3">
+                    <input
+                    id="<%=validationError.find(err => err.param === 'fatherNRC') ? 'invalid' : '' %>"
+                    type="text" 
+                    name="fatherNRC" 
+                    id="fatherNRC"
+                    value="<%=fatherNRC%>">
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="fatherWork">အလုပ်အကိုင်</label></div>
+                <div class="col span-2-of-3">
+                    <input 
+                    id="<%=validationError.find(err => err.param === 'fatherWork') ? 'invalid' : '' %>"
+                    type="text" 
+                    name="fatherWork" 
+                    id="fatherWork" 
+                    value="<%=fatherWork%>">
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="motherNameMyan">အမိအမည်(မြန်မာ)</label></div>
+                <div class="col span-2-of-3">
+                    <input 
+                    id="<%=validationError.find(err => err.param === 'motherNameMyan') ? 'invalid' : '' %>"
+                    type="text" 
+                    name="motherNameMyan" 
+                    id="motherNameMyan" 
+                    value="<%=motherNameMyan%>"></div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="motherNameEng">အမိအမည်(အင်္ဂလိပ်)</label></div>
+                <div class="col span-2-of-3">
+                    <input 
+                    id="<%=validationError.find(err => err.param === 'motherNameEng') ? 'invalid' : '' %>"
+                    type="text" 
+                    name="motherNameEng" 
+                    id="motherNameEng" 
+                    value="<%=motherNameEng%>">
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="motherNRC">နိုင်ငံသားစီစစ်ရေးကတ်ပြားအမှတ်</label></div>
+                <div class="col span-2-of-3">
+                    <input 
+                    id="<%=validationError.find(err => err.param === 'motherNRC') ? 'invalid' : '' %>"
+                    type="text" 
+                    name="motherNRC" 
+                    id="motherNRC" 
+                    value="<%=motherNRC%>">
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="motherWork">အလုပ်အကိုင်</label></div>
+                <div class="col span-2-of-3">
+                    <input 
+                    id="<%=validationError.find(err => err.param === 'motherWork') ? 'invalid' : '' %>"
+                    type="text" 
+                    name="motherWork" 
+                    id="motherWork" 
+                    value="<%=motherWork%>">
+                </div>
+            </div>
+            <hr class="break_line">
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="acadamicYear">ယခုစာသင်နှစ်</label></div>
+                <div class="col span-2-of-3">
+                    <select class="<%=validationError.find(err => err.param === 'acadamicYear') ? 'invalid' : '' %>" name="acadamicYear" id="acadamicYear">
+                        <option value="">Select one</option>
+                        <option value="2017">2017-2018</option>
+                        <option value="2018">2018-2019</option>
+                        <option value="2019">2019-2020</option>
+                        <option value="2020">2020-2021</option>
+                        <option value="2021">2021-2022</option>
+                        <option value="2022">2022-2023</option>
+                        <option value="2023">2023-2024</option>
+                        <option value="2024">2024-2025</option>
+                        <option value="2025">2025-2026</option>
+                        <option value="2026">2026-2027</option>
+                        <option value="2027">2027-2028</option>
+                        <option value="2028">2028-2029</option>
+                        <option value="2029">2029-2030</option>
+                        <option value="2030">2030-2031</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="attendenceYear">ယခုနှစ်သင်တန်းနှစ်</label></div>
+                <div class="col span-2-of-3">
+                    <%if(!firstYear){%>
+                        <select class="<%=validationError.find(err => err.param === 'attendenceYear') ? 'invalid' : '' %>" name="attendenceYear" id="attendenceYear">
+                            <option value="">Select one</option>
+                            <option value="firstYear">ပထမနှစ်</option>
+                            <option value="secondYear">ဒုတိယနှစ်</option>
+                            <option value="thirdYear">တတိယနှစ်</option>
+                            <option value="fourthYear">စတုတ္ထနှစ်</option>
+                            <option value="fifthYear">ပဥ္စမနှစ်</option>
+                            <option value="sixthYear">ဆဌမနှစ်</option>
+                        </select>
+                    <%} else{%>
+                        <select class="<%=validationError.find(err => err.param === 'attendenceYear') ? 'invalid' : '' %>" name="attendenceYear" id="attendenceYear">
+                            <option value="firstYear">ပထမနှစ်</option>
+                        </select>
+                    <%}%>
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="major">သင်တန်းအမည်</label></div>
+                <div class="col span-2-of-3">
+                    <select class="<%=validationError.find(err => err.param === 'major') ? 'invalid' : '' %>" name="major" id="major">
+                        <option value="">Select One Major</option>
+                        <option value="civil">Civil Engineering</option>
+                        <option value="ec">Electronic and Communication Engineering</option>
+                        <option value="ep">Eelctrical Power Engineering</option>
+                        <option value="mech">Mechnical Engineering</option>
+                        <option value="it">Information Technology Engineering</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="rollno">ခုံအမှတ်</label></div>
+                <div class="col span-2-of-3">
+                    <input 
+                    id="<%=validationError.find(err => err.param === 'rollno') ? 'invalid' : '' %>"
+                    type="text" 
+                    name="rollno" 
+                    id="rollno" 
+                    value="<%=rollno%>">
+                </div>
+            </div>
+            <%if(!firstYear){%>
+                <div class="form-input">
+                    <div class="col span-1-of-3"><label for="lastRollno">ယခင်နှစ်သင်တန်းခုံအမှတ်</label></div>
+                    <div class="col span-2-of-3">
+                        <input 
+                        id="<%=validationError.find(err => err.param === 'lastRollno') ? 'invalid' : '' %>"
+                        type="text" 
+                        name="lastRollno" 
+                        id="lastRollno" 
+                        value="<%=lastRollno%>">
+                    </div>
+                </div>
+            <%}%>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="g10Rollno">အခြေခံပညာအထက်တန်းခုံအမှတ်</label></div>
+                <div class="col span-2-of-3">
+                    <input
+                    id="<%=validationError.find(err => err.param === 'g10Rollno') ? 'invalid' : '' %>"
+                    type="text"
+                    name="g10Rollno"
+                    id="g10Rollno"
+                    value="<%=g10Rollno%>">
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="g10Year">အောင်မြင်သည့်ခုနှစ်</label></div>
+                <div class="col span-2-of-3">
+                    <input 
+                    id="<%=validationError.find(err => err.param === 'g10Year') ? 'invalid' : '' %>"
+                    type="text" 
+                    name="g10Year" 
+                    id="g10Year" 
+                    value="<%=g10Year%>">
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="alwaysLive">အမြဲတမ်းနေရပ်လိပ်စာအပြည့်အစုံ</label></div>
+                <div class="col span-2-of-3">
+                    <textarea 
+                    class="<%=validationError.find(err => err.param === 'alwaysLive') ? 'invalid' : '' %>"
+                    name="alwaysLive" 
+                    id="alwaysLive" 
+                    cols="30" rows="10"><%if(errorCondition){%><%=mawlamyineLive%><%}%></textarea>
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="mawlamyineLive">ယခုမော်လမြိုင်နေရပ်လိပ်စာ</label></div>
+                <div class="col span-2-of-3">
+                    <textarea
+                    class="<%=validationError.find(err => err.param === 'mawlamyineLive') ? 'invalid' : '' %>"
+                    name="mawlamyineLive"
+                    id="mawlamyineLive" 
+                    cols="30" rows="10"><%if(errorCondition){%><%=mawlamyineLive%><%}%></textarea>
+                </div>
+            </div>
+            <div class="form-input">
+                <div class="col span-1-of-3"><label for="phno">ဆက်သွယ်နိုင်မည့်ဖုန်းနံပါတ်</label></div>
+                <div class="col span-2-of-3">
+                    <input 
+                    id="<%=validationError.find(err => err.param === 'phno') ? 'invalid' : '' %>"
+                    type="tel" 
+                    name="phno" 
+                    id="phno"
+                    value="<%=phno%>">
+                </div>
+            </div>
+            <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+            <div class="form-input">
+                <div class="col span-1-of-3"></div>
+                <div class="col span-2-of3">
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="pk_test_e9b2yTy1KIZ4zXZ3iJToMD3g00iT1DnHSw"
+                    data-amount="<%=34500 * 100%>"
+                    data-name="Your Payment"
+                    data-description="Demo payment"
+                    data-image="http://www.macmillandictionaryblog.com/wp-content/uploads/2017/07/emoji-810x514.jpg"
+                    data-locale="auto"
+                    data-currency="mmk">
+                    </script>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+
+
+    <%- include("../partials/footer") %>

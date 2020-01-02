@@ -1,0 +1,43 @@
+<%- include("../partials/header") %>
+<link rel="stylesheet" href="/style/login.css">
+</head>
+
+<body>
+    <main>
+        <div class="index-header" style="margin-top: 1rem;">
+            <img src="./images/img/logo.png" alt="School Logo">
+            <h1>Technological University Mawlamyine</h1>            
+        </div>
+        <%if(errorMessage){%>
+            <div>
+                <p class="flash-message flash-message--error"><%=errorMessage%></p>
+            </div>
+        <%}%>
+        <form action="/login" method="POST" class="checkin-form">
+            <h2>Login</h2>
+            <hr>
+            <div class="form-group">
+                <label for="email">Email</label> <br>
+                <input
+                class="<%=validationError.find(err => err.param === 'email') ? 'invalid' : ''%>"
+                type="text"
+                name="email"
+                id="email"
+                value="<%=email%>">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label> <br>
+                <input
+                class="<%=validationError.find(err => err.param === 'email') ? 'invalid' : ''%>"
+                type="password"
+                name="password"
+                id="password"
+                value="<%=password%>">
+            </div>
+            <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+            <div class="form-group">
+                <button class="btn">Login</button>
+            </div>
+        </form>
+    </main>
+<%- include("../partials/footer") %>

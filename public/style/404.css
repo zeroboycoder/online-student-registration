@@ -1,0 +1,18 @@
+html, body{
+    color: #555;
+}
+
+.p-n-f{
+    max-width: 90%;
+    margin: 2rem auto;
+}
+
+.p-n-f h1{
+    font-size: 300%;
+    font-weight: 300;
+    padding-bottom: 1rem;
+}
+
+.p-n-f p{
+    font-size: 110%;
+}

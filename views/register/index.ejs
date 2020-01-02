@@ -1,0 +1,55 @@
+<%- include("../partials/header") %>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <a class="nav-icon">
+                <img src="../../images/img/nav-bar.png" alt="Nav Bar Logo">
+            </a>
+            <ul class="main-nav">
+                <%if(!isAuthenticated) {%>
+                    <li>
+                        <a href="/login"><i class="far fa-user"></i>Login</a>
+                    </li>
+                <%}%>
+                <%if(isAuthenticated) {%>
+                    <li>
+                        <i class="far fa-user-circle"></i><%=uname%>
+                    </li>
+                    <li>
+                        <a href="/searchStudent"><i class="fas fa-search"></i>Search</a>
+                    </li>
+                <%}%>
+                <li>
+                    <a href="/about"><i class="far fa-id-card"></i>About</a>
+                </li>
+                <%if(isAuthenticated) {%>
+                    <li>
+                        <a href="/logout"><i class="far fa-user"></i>Logout</a>
+                    </li>
+                <%}%>
+            </ul>
+        </nav>    
+        <div class="">
+            <div class="index-form">
+                <div class="index-header">
+                    <img src="./images/img/logo.png" alt="School Logo">
+                    <!-- <h1>Technological University Mawlamyine</h1> -->
+                    <h1>
+                        <span class="typer" id="main" data-words="Technological University Mawlamyine" data-delay="100" data-colors="white" data-deleteDelay="999999999"></span>
+                    </h1>
+                </div>
+                <div class="button first">
+                    <a href="/student_registration?year=first" class="btn">First Year</a>
+                </div>
+                <div class="button second">
+                    <a href="/check-in/second-to-final" class="btn">Second Year & Upper</a>
+                </div>
+                <div class="button verification">
+                    <a href="/verification" class="btn">Verification Form</a>
+                </div>
+            </div>
+        </div>
+    </main>
+<%- include("../partials/footer") %>

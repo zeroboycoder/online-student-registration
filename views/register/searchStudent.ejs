@@ -1,0 +1,74 @@
+<%- include("../partials/header") %>
+<link rel="stylesheet" href="/style/searchStudent.css">
+</head>
+
+<body>
+    <main>
+        <div class="main-div">
+            <div class="index-header" style="margin-top: 1rem;">
+                <img src="./images/img/logo.png" alt="School Logo">
+                <h1>Technological University Mawlamyine</h1>            
+            </div>
+            <%if(errorMessage) { %>
+                <div>
+                    <p class="flash-message flash-message--error"><%=errorMessage%></p>
+                </div>
+            <% } %>
+            <div class="search-section">
+                <form action="/searchStudent" method="post">
+                    <div class="form-group">
+                        <h2>Search Student</h2>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label for="acadamicYear">စာသင်နှစ်</label>
+                        <select name="acadamicYear" id="acadamicYear" class="<%=validationError.find(err => err.param === 'acadamicYear') ? 'invalid' : ''%>">
+                            <option value="">Select one</option>
+                            <option value="2017">2017-2018</option>
+                            <option value="2018">2018-2019</option>
+                            <option value="2019">2019-2020</option>
+                            <option value="2020">2020-2021</option>
+                            <option value="2021">2021-2022</option>
+                            <option value="2022">2022-2023</option>
+                            <option value="2023">2023-2024</option>
+                            <option value="2024">2024-2025</option>
+                            <option value="2025">2025-2026</option>
+                            <option value="2026">2026-2027</option>
+                            <option value="2027">2027-2028</option>
+                            <option value="2028">2028-2029</option>
+                            <option value="2029">2029-2030</option>
+                            <option value="2030">2030-2031</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="major">သင်တန်းအမည်</label>
+                        <select name="major" id="major" class="<%=validationError.find(err => err.param === 'major') ? 'invalid' : ''%>">
+                            <option value="">Select one</option>
+                            <option value="civil">Civil Engineering</option>
+                            <option value="ec">Electronic & Communication Engineering</option>
+                            <option value="ep">Electrical Power Engineering</option>
+                            <option value="mech">Mechnical Engineering</option>
+                            <option value="it">Information Technology Engineering</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="attendenceYear">သင်တန်းနှစ်</label>
+                        <select name="attendenceYear" id="attendenceYear" class="<%=validationError.find(err => err.param === 'attendenceYear') ? 'invalid' : ''%>">
+                            <option value="">Select one</option>
+                            <option value="firstYear">First Year</option>
+                            <option value="secondYear">Second Year</option>
+                            <option value="thirdYear">Third Year</option>
+                            <option value="fourthYear">Fourth Year</option>
+                            <option value="fifthYear">Fifth Year</option>
+                            <option value="sixthYear">Sixth Year</option>
+                        </select>
+                    </div>
+                    <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                    <div class="form-group">
+                        <button class="btn">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+<%- include("../partials/footer") %>

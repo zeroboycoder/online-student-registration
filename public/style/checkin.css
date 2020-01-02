@@ -1,0 +1,83 @@
+main{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../../images/img/school.png");
+    background-size: cover;
+    background-position: center;
+    font-size: 18px;
+}
+
+.heading{
+    text-align: center;
+    margin: 1.5rem 0 2rem 0;
+}
+
+.heading h1{
+    font-family: 'lato', sans-serif;
+    font-weight: 300;
+    font-size: 250%;
+    letter-spacing: 1px;
+}
+
+.checkin-form{
+    width: 27%;
+    margin: 0 auto;
+    border: 1px solid #333;
+    border-radius: 3px;
+    padding: 20px;
+    box-shadow: 0px 2px 15px #000;
+}
+
+hr{
+    width: 85%;
+}
+
+.checkin-form h2{
+    font-family: 'lato', sans-serif;
+    font-weight: 400;
+    font-size: 180%;
+    padding-bottom: 10px;
+}
+
+.checkin-form .form-group{
+    margin: 2rem 0;
+}
+
+.checkin-form .form-group.button{
+    margin: 2rem 0 0 0;
+}
+
+.checkin-form .form-group input{
+    background-color: #ffffff00;
+    width: 75%;
+    color: #fff;
+    font-size: 17px;
+    padding: 3px;
+    border: none;
+    border-bottom: 1px solid #f8a84d;
+    transition: border-bottom 0.2s;
+}
+
+.checkin-form .form-group input:hover{
+    border-bottom: 1px solid #ff8800;
+}
+
+.checkin-form .form-group select{
+    margin-top: 1rem;
+}
+
+.form-group .btn{
+    float: right;
+    margin-right: 1.5rem;
+    background-color: #ffffff00;
+    color: #f0932b;
+    padding: 7px 25px;
+    border: 1px solid #f0932b;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.form-group .btn:hover,
+.form-group .btn:active{
+    color: #000;
+    background-color: #f0932b;
+}

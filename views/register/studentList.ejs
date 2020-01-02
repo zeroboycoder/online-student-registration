@@ -1,0 +1,38 @@
+<%- include("../partials/header") %>
+<link rel="stylesheet" href="/style/studentList.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="index-header" style="margin-top: 1rem;">
+            <img src="./images/img/logo.png" alt="School Logo">
+            <h1>Technological University Mawlamyine</h1>            
+        </div>
+        <div class="table-section">
+            <table class="info-table">
+                <tr>
+                    <th>Major</th>
+                    <td><%=major%></td>
+                </tr>
+                <tr>
+                    <th>Year</th>
+                    <td><%=attendenceYear%> (<%=acadamicYear%> - <%=+acadamicYear+1%>)</td>
+                </tr>
+            </table>
+            <table class="data-table">
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Roll no</th>
+                </tr>
+                <%studentName.forEach((result, index) => {%>
+                    <tr>
+                        <td><%=index+1%></td>
+                        <td><%=studentName[index]%></td>
+                        <td><%=studentRollno[index]%></td>
+                    </tr>
+                <%})%>
+            </table>
+        </div>
+    </div>
+<%- include("../partials/footer") %>

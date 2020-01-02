@@ -1,0 +1,121 @@
+body, html{
+    background-color: #f0f0f0;
+    font-size: 18px;
+    color: #555;
+}
+
+.verification-section{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.verification-form{
+    width: 80%;
+    margin: 1.5rem auto;
+    border-radius: 4px;
+    box-shadow: 0px 2px 8px #585858;
+}
+
+.verification-header{
+    padding: 6px 0;
+    background-color: #b2bec3;
+    text-align: center;
+}
+
+.verification-header img{
+    width: 60px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.verification-header h1{
+    display: inline-block;
+    font-size: 180%;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+.verification-body{
+    padding: 10px;
+    font-family: 'Lato', sans-serif;
+}
+
+.verification-body h1{
+    text-align: center;
+    font-weight: 400;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+
+/* Left */
+.verification-body .left{
+    float: left;
+    width: 49%;
+    margin: 0 auto;
+}
+
+.form-group{
+    width: 80%;
+    margin: 0 auto 1rem auto;
+}
+
+.form-group label{
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Right */
+.verification-body .right{
+    float: left;
+    width: 49%;
+    margin: 0 auto;
+    border-left: 1px solid rgb(95, 86, 86);
+}
+
+.form-group select,
+.form-group input{
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+
+.form-group input{
+    background-color: #ffffff00;
+    border: none;
+    border-bottom: 1px solid #808080;
+    padding: 5px 3px;
+    font-size: 17px;
+    color: #555;
+}
+
+/* Button */
+.verification-body button{
+    clear: both;
+    float: right;
+    font-size: 18px;
+    margin: 1rem 1.5rem;
+    color: #555;
+    background-color: #ffffff00;
+    padding: 8px 28px;
+    border: 1px solid #b2bec3;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+
+.verification-body button:hover,
+.verification-body button:active{
+    color: #555;
+    background-color: #b2bec3;
+}
+
+/* hr */
+.verification-section hr{
+    width: 80%;
+    margin: 0 auto;
+    border: none;
+    border-bottom: 13px solid #949ca0;
+}
