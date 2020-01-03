@@ -521,6 +521,12 @@ exports.postSearchStudent = (req, res, next) => {
 
 exports.getAbout = (req, res, next) => {
     res.render("register/about", {
-        title : "About"
+        title : "About",
+        successMessage : null,
+        errorMessage : null,
+        validationError : [],
+        name : null,
+        email : null,
+        content : null
     })
 }

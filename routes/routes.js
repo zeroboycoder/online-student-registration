@@ -1,6 +1,7 @@
 const express = require("express");
 const route = express.Router();
 const studentController = require("../controllers/studentController");
+const feedbackController = require("../controllers/feedbackController");
 const authController = require("../middleware/isAuth");
 
 const { body } = require("express-validator");
@@ -149,5 +150,20 @@ route.post("/searchStudent",
 ,studentController.postSearchStudent);
 
 route.get("/about", studentController.getAbout);
+
+route.post("/about",
+[
+    body('name')
+    .isLength({min : 1})
+    .isString()
+    .trim(),
+    body('content')
+    .isLength({min : 1})
+    .isString()
+    .trim()
+]
+,feedbackController.postFeedback)
+
+route.get("/feedback", authController.isAuth, feedbackController.getFeedback);
 
 module.exports = route;

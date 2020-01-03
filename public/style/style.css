@@ -49,8 +49,8 @@ main{
 
 nav{
     float: right;
-    width: 6rem; 
-    margin: 3.2rem 1rem;
+    width: 7rem; 
+    margin: 3.2rem 0 3.2rem 1rem;
     text-align: left;
 }
 
@@ -165,6 +165,12 @@ nav{
     color: rgb(29, 27, 27);
     border: 1px solid #e21919;
     background-color: #df7171bd;
+}
+
+.flash-message--success {
+    color: rgb(29, 27, 27);
+    border: 1px solid #089c14;
+    background-color: #1edf1ebd;
 }
 
 /* invalid message */

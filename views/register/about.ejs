@@ -23,7 +23,7 @@
                         <h2>Pyae Sone Khant</h2>
                     </div>
                     <div class="para">
-                        <p>Hello! I'm Pyae Sone Khant. Now, I'm studying in Technological University, Mawlamyine as third year IT student. In this project, I responsibility in the part of coding, database system & user experience.</p>
+                        <p>Hello! I'm Pyae Sone Khant. Now, I'm studying in Technological University, Mawlamyine as third year IT student. In this project, my responsible parts are in coding, database system & user experience.</p>
                     </div>
                     <div class="social-link">
                         <div>
@@ -54,20 +54,31 @@
                 <hr>
 
                 <div class="feedback-section">
+                    <%if(errorMessage) { %>
+                        <div>
+                            <p class="flash-message flash-message--error"><%=errorMessage%></p>
+                        </div>
+                    <% } %>
+                    <%if(successMessage) { %>
+                        <div>
+                            <p class="flash-message flash-message--success"><%=successMessage%></p>
+                        </div>
+                    <% } %>
                     <h2 id="feedback-header">Feedback</h2>
-                    <form action="/feedback" method="post" class="feedback-form">
+                    <form action="/about" method="post" class="feedback-form">
                         <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" name="name" id="name">
+                            <label>Name *</label>
+                            <input type="text" name="name" value="<%=name%>" id="<%=validationError.find(err => err.param === 'name') ? 'invalid' : ''%>">
                         </div>
                         <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" name="email" id="email">
+                            <label>Email (option)</label>
+                            <input type="email" name="email" id="email" value="<%=email%>">
                         </div>
                         <div class="form-group">
-                            <label>Content</label>
-                            <textarea name="content" id="content" cols="30" rows="10"></textarea>
+                            <label>Content *</label>
+                            <textarea name="content" cols="30" rows="10" id="<%=validationError.find(err => err.param === 'content') ? 'invalid' : ''%>"><%=content%></textarea>
                         </div>
+                        <input type="hidden" name="_csrf" value="<%=csrfToken%>">
                         <div class="form-group">
                             <button class="btn">Send</button>
                         </div>
@@ -79,7 +90,7 @@
             <div class="footer-container">
                 <p>Contact to our University</p>
                 <div class="social-icon fb"><i class="fab fa-facebook"></i><a href="https://www.facebook.com/TechUni.Mawlamyine" class="link">https://www.facebook.com/TechUni.Mawlamyine</a></div>
-                <div class="social-icon email"><i class="far fa-envelope"></i> pyaesonekhant@tumawlamyine.edu.mm</div>
+                <div class="social-icon email"><i class="far fa-envelope"></i> mlmtu001@gmail.com</div>
                 <div class="social-icon ph"><i class="fas fa-phone-alt"></i> 09 456 555 503</div>
                 <div class="social-icon website"><i class="fab fa-firefox"></i><a href="http://tumawlamyine.edu.mm/" class="link">http://tumawlamyine.edu.mm/</a></div>
             </div>
